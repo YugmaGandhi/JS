@@ -1,18 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 let name = "Yugma";
 function App() {
   return (
     <>
-    <nav>
-      <li>home</li>
-      <li>contacts</li>
-      <li>about</li>
-    </nav>
-    <div>
-      <h3>hi my name is {name}</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolores ut maxime omnis tempora similique ex earum veritatis delectus nobis voluptatibus ab minima doloremque odio fugit minus, sapiente reiciendis dolorum sint accusamus soluta dignissimos.</p>
-    </div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="/">
+          TextUtils
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="/">
+                Home <span className="sr-only">(current)</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                About
+              </a>
+            </li>
+          </ul>
+          <form className="form-inline my-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              className="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
     </>
   );
 }

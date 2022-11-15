@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-
+let name = "Yugma";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <nav>
+      <li>home</li>
+      <li>contacts</li>
+      <li>about</li>
+    </nav>
+    <div>
+      <h3>hi my name is {name}</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolores ut maxime omnis tempora similique ex earum veritatis delectus nobis voluptatibus ab minima doloremque odio fugit minus, sapiente reiciendis dolorum sint accusamus soluta dignissimos.</p>
     </div>
+    </>
   );
 }
 

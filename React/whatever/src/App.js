@@ -1,11 +1,14 @@
 import Navbar from "./Components/Navbar"
-import logo from "./logo.svg";
+import TextArea from "./Components/TextArea"
+
 import "./App.css";
-let name = "Yugma";
 function App() {
   return (
     <>
-      <Navbar title = "TextUtils"/> {/* here i am passing props named title*/}
+      <Navbar title="TextUtils" /> {/* here i am passing props named title*/}
+      <div className="container mt-3" >
+        <TextArea heading="Enter the text to analyse"/>
+      </div>
     </>
   );
 }

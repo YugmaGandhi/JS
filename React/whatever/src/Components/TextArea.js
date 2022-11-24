@@ -15,7 +15,7 @@ export default function TextArea(props) {
         setText("");
     }
     const removeExtraSpace = () => {
-        const newText = text.split(/[ ]+/);
+        const newText = text.split(/[\s]+/);
         setText(newText.join(" "));
     }
     //below function is taking all the changed value in event and passing it to the setText function
@@ -26,7 +26,7 @@ export default function TextArea(props) {
         <>
             <div>
                 <div className="form-group">
-                    <label htmlFor="myBox"><h2>{props.heading}</h2></label>
+                    <label htmlFor="myBox" style={{color : props.switch?"white":"black"}}><h2>{props.heading}</h2></label>
                     <textarea className="form-control" id="myBox" value={text} onChange={handleOnchange} rows="8"></textarea>
                 </div>
                 <button className="btn btn-primary mt-2" onClick={OnclickUpctext}>To Uppercase</button>
@@ -35,7 +35,7 @@ export default function TextArea(props) {
                 <button className="btn btn-danger mt-2 ms-2" onClick={clearText}>Clear</button>
 
             </div>
-            <div className="container mt-3">
+            <div className="container mt-3" style={{color : props.switch?"white":"black"}}>
                 <h1>Text Summery</h1>
                 <p>{text.split(" ").length} Words and {text.length} Characters</p>
                 <p>{0.008 * text.split(" ").length} minute to read</p>

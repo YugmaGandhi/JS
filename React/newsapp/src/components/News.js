@@ -2,18 +2,64 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export class News extends Component {
+  articles = [
+    {
+    "source": {
+    "id": "google-news-in",
+    "name": "Google News (India)"
+    },
+    "author": "Poulomi Ghosh",
+    "title": "'Abhi bhi time hai...' Jadeja shares Bal Thackeray's old 'Gujarat gaya' video",
+    "description": "Cricketer Ravindra Jadeja shared an old video of Shiv Sena founder Balasaheb Thackeray in which Balasaheb said Gujarat is nothing without Modi.",
+    "url": "https://www.hindustantimes.com/elections/gujarat-assembly-election/abhi-bhi-time-hai-jadeja-shares-bal-thackeray-s-old-gujarat-gaya-video-101669855155029.html",
+    "urlToImage": "https://images.hindustantimes.com/img/2022/12/01/1600x900/jadeja_modi_1669855567578_1669855571807_1669855571807.jpg",
+    "publishedAt": "2022-12-01T00:49:29+00:00",
+    "content": "Hours before Gujarat votes in the first phase on Thursday, cricketer Ravindra Jadeja shared an old video of Balasaheb Thackeray saying Gujarat will end if Narendra Modi is not there. \"Abhi bhi time h… [+1668 chars]"
+    },
+    {
+    "source": {
+    "id": "espn-cric-info",
+    "name": "ESPN Cric Info"
+    },
+    "author": null,
+    "title": "PCB hands Umar Akmal three-year ban from all cricket | ESPNcricinfo.com",
+    "description": "Penalty after the batsman pleaded guilty to not reporting corrupt approaches | ESPNcricinfo.com",
+    "url": "http://www.espncricinfo.com/story/_/id/29103103/pcb-hands-umar-akmal-three-year-ban-all-cricket",
+    "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1099495_800x450.jpg",
+    "publishedAt": "2020-04-27T11:41:47Z",
+    "content": "Umar Akmal's troubled cricket career has hit its biggest roadblock yet, with the PCB handing him a ban from all representative cricket for three years after he pleaded guilty of failing to report det… [+1506 chars]"
+    },
+    {
+    "source": {
+    "id": "espn-cric-info",
+    "name": "ESPN Cric Info"
+    },
+    "author": null,
+    "title": "What we learned from watching the 1992 World Cup final in full again | ESPNcricinfo.com",
+    "description": "Wides, lbw calls, swing - plenty of things were different in white-ball cricket back then | ESPNcricinfo.com",
+    "url": "http://www.espncricinfo.com/story/_/id/28970907/learned-watching-1992-world-cup-final-full-again",
+    "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg",
+    "publishedAt": "2020-03-30T15:26:05Z",
+    "content": "Last week, we at ESPNcricinfo did something we have been thinking of doing for eight years now: pretend-live ball-by-ball commentary for a classic cricket match. We knew the result, yes, but we tried… [+6823 chars]"
+    }
+    ]
+  constructor(){
+    super();
+    this.state = {
+      article : this.articles,
+      loading: false
+    }
+  }
   render() {
     return (
       <div className="container">
        <h1 className='my-3'>Today's top headlines</h1>
        <div className='row'>
-        <NewsItem title="'Abhi bhi time hai...' Jadeja shares Bal Thackeray's old 'Gujarat gaya' video" description="Cricketer Ravindra Jadeja shared an old video of Shiv Sena founder Balasaheb Thackeray in which Balasaheb said Gujarat is nothing without Modi." imgUrl="https://images.hindustantimes.com/img/2022/12/01/1600x900/jadeja_modi_1669855567578_1669855571807_1669855571807.jpg"/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
+        {this.state.article.map((el)=>{ 
+          return <div className="col-md-4 my-2" key={el.url}>
+          <NewsItem title={el.title.slice(0,45)} description={el.description.slice(0,88)} imgUrl={el.urlToImage} newsUrl={el.url}/>
+          </div>
+        })}
        </div>
       </div>
     )

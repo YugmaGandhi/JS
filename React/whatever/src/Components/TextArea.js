@@ -37,7 +37,7 @@ export default function TextArea(props) {
             </div>
             <div className="container mt-3" style={{color : props.switch?"white":"black"}}>
                 <h1>Text Summery</h1>
-                <p>{text.split(" ").length} Words and {text.length} Characters</p>
+                <p>{text.split(" ").filter(el=> el.length!==0).length} Words and {text.length} Characters</p>
                 <p>{0.008 * text.split(" ").length} minute to read</p>
                 <h2>Preview</h2>
                 <p>{text}</p>

@@ -20,9 +20,11 @@ This is a RESTful API for managing contacts. Users can perform CRUD operations o
 1. Clone the repository to your local machine
 2. Create a `.env` file in the root directory and add the following environment variables:
 
+```ini
 PORT=<PORT_NUMBER>
 CONNECTION_STRING=<CONNECTION_STRING_TO_YOUR_DATABASE>
 SECRET_KEY=<YOUR_SECRET_KEY_FOR_JWT>
+```
 
 3. Run `npm install` to install the dependencies
 4. Run `npm start` to start the server
@@ -35,6 +37,7 @@ SECRET_KEY=<YOUR_SECRET_KEY_FOR_JWT>
 
 ## Examples
 
+```yaml
 // Example of registering a new user
 POST /api/users/register
 {
@@ -71,6 +74,7 @@ Authorization: Bearer <JWT_TOKEN>
 // Example of deleting a contact with a JWT token
 DELETE /api/contact/:id
 Authorization: Bearer <JWT_TOKEN>
+```
 
 
 ## Known Issues
